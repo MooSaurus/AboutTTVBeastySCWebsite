@@ -1,0 +1,7 @@
+name = "my-simple-site"
+type = "javascript"
+
+[site]
+bucket = "."              # This means the current folder
+entry-point = "."         # Repo root
+compatibility_date = "2025-11-06"
