@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TTVBeastySC Socials </title>
+<style>
+    body {
+        background: radial-gradient(circle at top, #0a0a20 0%, #000 100%);
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: 
+            radial-gradient(circle at 30% 20%, var(--glow-color1) 0%, transparent 50%),
+            radial-gradient(circle at 70% 20%, var(--glow-color2) 0%, transparent 50%),
+            radial-gradient(circle at 50% 50%, var(--glow-color3) 0%, transparent 70%);
+        pointer-events: none;
+        z-index: 0;
+        animation: auraPulse 10s ease-in-out infinite,
+                   colorCycle 15s linear infinite;
+        mix-blend-mode: screen;
+    }
+
+    body::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 50% 50%, var(--glow-color2) 0%, transparent 40%);
+        pointer-events: none;
+        z-index: 0;
+        animation: auraPulse2 8s ease-in-out infinite,
+                   colorCycle 12s linear infinite reverse;
+        mix-blend-mode: overlay;
+    }
+
+    @keyframes auraPulse {
+        0% { opacity: 0.3; transform: scale(1); }
+        50% { opacity: 0.6; transform: scale(1.1); }
+        100% { opacity: 0.3; transform: scale(1); }
+    }
+
+    @keyframes auraPulse2 {
+        0% { opacity: 0.3; transform: scale(1.2); }
+        50% { opacity: 0.6; transform: scale(1); }
+        100% { opacity: 0.3; transform: scale(1.2); }
+    }
+
+    @keyframes colorCycle {
+        0% { 
+            --glow-color1: rgba(0, 229, 255, 0.15);
+            --glow-color2: rgba(255, 0, 255, 0.15);
+            --glow-color3: rgba(0, 255, 140, 0.1);
+        }
+        33% {
+            --glow-color1: rgba(255, 0, 255, 0.15);
+            --glow-color2: rgba(0, 255, 140, 0.15);
+            --glow-color3: rgba(0, 229, 255, 0.1);
+        }
+        66% {
+            --glow-color1: rgba(0, 255, 140, 0.15);
+            --glow-color2: rgba(0, 229, 255, 0.15);
+            --glow-color3: rgba(255, 0, 255, 0.1);
+        }
+        100% {
+            --glow-color1: rgba(0, 229, 255, 0.15);
+            --glow-color2: rgba(255, 0, 255, 0.15);
+            --glow-color3: rgba(0, 255, 140, 0.1);
+        }
+    }
+
+    .card {
+        background: rgba(15, 15, 20, 0.85);
+        backdrop-filter: blur(10px);
+        border: 2px solid #00e5ff44;
+        border-radius: 20px;
+        box-shadow: 0 0 30px #00e5ff88;
+        padding: 40px;
+        text-align: center;
+        width: 500px; /* increased for logo */
+        transition: 0.3s ease;
+        position: relative;
+        z-index: 1;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 50px #00e5ff88;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #00e5ff;
+        text-shadow: 0 0 10px #00e5ff88;
+    }
+
+    p {
+        font-size: 1rem;
+        color: #ccc;
+    }
+
+    button {
+        margin-top: 25px;
+        background: #00e5ff88;
+        border: none;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        font-size: 0.9em;
+    }
+
+    button:hover {
+        background: #fff;
+        color: #00e5ff;
+        box-shadow: 0 0 20px #00e5ff88;
+    }
+
+    .hidden-box {
+        margin-top: 25px;
+        display: none;
+        animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #00e5ffaa;
+        text-decoration: none;
+        margin: 12px 0;
+        padding: 8px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+        background: rgba(0,229,255,0.03);
+    }
+
+    .social-link:hover {
+        color: #fff;
+        text-shadow: 0 0 10px #00e5ffaa;
+        background: rgba(0,229,255,0.08);
+        transform: translateY(-1px);
+    }
+
+    .profile-logo {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        margin: 0 auto 25px;
+        border: 3px solid #00e5ff88;
+        box-shadow: 0 0 30px #00e5ff44,
+                   inset 0 0 20px #00e5ff22;
+        object-fit: contain;
+        background: rgba(0,0,0,0.2);
+        padding: 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .profile-logo:hover {
+        transform: scale(1.02);
+        box-shadow: 0 0 40px #00e5ff66;
+    }
+
+    .copyright {
+        margin-top: 35px;
+        padding-top: 20px;
+        font-size: 0.85em;
+        color: #888;
+        opacity: 0.7;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    @keyframes fadeIn {
+        from { 
+            opacity: 0;
+            transform: translateY(-8px);
+        }
+        to { 
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <img src="https://cdn.discordapp.com/attachments/913495609695141918/1435774233098715217/766B4498-689B-4A8E-AE25-C2047DF419D0.png?ex=690d3074&is=690bdef4&hm=e3982bb2baf80df6e857216bc747ea9d86ec8e12f3b2799642e45bb76b5c86e6" 
+         alt="TTVBeastySC Logo" 
+         class="profile-logo">
+    <h1>TTVBeastySC 🐾</h1>
+    <p>Streamer. Gamer. Content creator. Loves WWE SuperCard and can’t get enough of WWE action.</p>
+    <button onclick="toggleSocials()">Show Socials</button>
+
+    <div class="hidden-box" id="socialBox">
+        <a class="social-link" href="https://twitch.tv/TTVBeastySC" target="_blank">Twitch</a>
+        <a class="social-link" href="https://discord.gg/ueufRuskPs" target="_blank">Discord</a>
+        <a class="social-link" href="https://youtube.com/@TTVBeastySC" target="_blank">YouTube</a>
+        <a class="social-link" href="https://x.com/TTVBeastySC" target="_blank">X</a>
+        <a class="social-link" href="https://www.tiktok.com/@ttvbeastysc" target="_blank">Tiktok</a>
+        <a class="social-link" href="https://www.instagram.com/ttvbeastysc" target="_blank">instagram</a>
+        <a class="social-link" href="https://discord.gg/tHCKNx9jqm" target="_blank">WRLDNationRP Discord</a>
+
+    </div>
+    <p class="copyright">© 2025 MooSaurus</p>
+</div>
+
+<script>
+function toggleSocials() {
+    const box = document.getElementById('socialBox');
+    const btn = document.querySelector('button');
+    if(box.style.display === 'block') {
+        box.style.display = 'none';
+        btn.textContent = 'Show Socials';
+    } else {
+        box.style.display = 'block';
+        btn.textContent = 'Hide Socials';
+    }
+}
+</script>
+
+</body>
+</html>
