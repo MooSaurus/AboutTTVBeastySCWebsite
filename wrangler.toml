@@ -1,4 +1,5 @@
-name = "TTVBeastySC-simple-site"
+name = "ttvbeastysc-simple-site"
+main = "workers-site/index.js"
 compatibility_date = "2025-11-06"
 
 [site]
