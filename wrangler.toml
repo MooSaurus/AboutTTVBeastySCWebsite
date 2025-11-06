@@ -1,7 +1,5 @@
 name = "my-simple-site"
-type = "javascript"
+compatibility_date = "2025-11-06"
 
 [site]
-bucket = "."              # This means the current folder
-entry-point = "."         # Repo root
-compatibility_date = "2025-11-06"
+bucket = "."      # The folder with your index.html
